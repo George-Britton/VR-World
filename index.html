@@ -1,0 +1,43 @@
+<head>
+  <title>Interchange 2019 forest</title>
+  <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
+  <script src="js/aframe-extras.controls.min.js"></script>
+  <!--
+  see for environment plugin details: https://github.com/supermedium/aframe-environment-component
+-->
+</head>
+
+<body>
+    <a-scene environment="
+             preset:japan;
+             seed:55;
+             playArea:0.25;
+             groundYScale:1;
+             dressing:mushrooms;
+             skyType:gradient;
+             skyColor:#ff00ff;
+             lighting:point;
+             fog:0.9;
+             ground:noise;
+             groundTexture:walkernoise;
+             groundColor:#bb00bb;
+             groundColor2:#00dddd;
+             dressingAmount:50;
+             dressingColor:#00ffff;
+             dressingScale:20;
+             shadowSize:100
+             ">
+
+        <!--Assets-->
+        <a-assets>
+            <a-asset-item id="bus-stop" src="models/bus_stop/scene.gltf"></a-asset-item>
+            <a-asset-item id="tree" src="models/tree/scene.gltf"></a-asset-item>
+        </a-assets>
+
+
+        <!--Entities-->
+        <a-entity id="rig" movement-controls="fly:true"><a-entity camera position="0 1.6 0" look-controls></a-entity></a-entity>
+        <a-entity gltf-model="#bus-stop" rotation="0 90 0" position="-10 0 -13"></a-entity>
+    </a-scene>
+</body>
